@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Luis Scripts</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #1e1e1e;
+            color: white;
+            text-align: center;
+            margin-top: 100px;
+        }
+
+        h1 {
+            color: #00ff88;
+        }
+
+        input {
+            padding: 10px;
+            width: 250px;
+            border: none;
+            border-radius: 5px;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin-left: 5px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            background: #00ff88;
+            font-weight: bold;
+        }
+
+        button:hover {
+            opacity: 0.8;
+        }
+
+        #result {
+            margin-top: 20px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .available {
+            color: lime;
+        }
+
+        .notavailable {
+            color: red;
+        }
+
+        #examples {
+            margin-top: 30px;
+            color: #ccc;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>scripts</h1>
+
+    <input type="text" id="scriptName" placeholder="Enter script name">
+    <button onclick="checkScript()">Check</button>
+
+    <div id="result"></div>
+
+    <div id="examples">
+        <p>Available Examples:</p>
+        <ul style="list-style:none;">
+            <li>none</li>
+            <li>none</li>
+            <li>none</li>
+        </ul>
+
+        <p>Not Available Examples:</p>
+        <ul style="list-style:none;">
+            <li>none</li>
+            <li>none</li>
+        </ul>
+    </div>
+
+    <script>
+        const availableScripts = [
+            "None",
+            "None"
+        ];
+
+        function checkScript() {
+            const input = document.getElementById("scriptName").value.trim();
+            const result = document.getElementById("result");
+
+            if (availableScripts.includes(input)) {
+                result.textContent = "✅ Available";
+                result.className = "available";
+            } else {
+                result.textContent = "❌ Not Available";
+                result.className = "notavailable";
+            }
+        }
+    </script>
+
+</body>
+</html>
